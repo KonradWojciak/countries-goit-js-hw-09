@@ -1,5 +1,6 @@
 import "./css/styles.css";
-import { Notify } from "notiflix/build/notiflix-notify-aio";
+import debounce from "lodash.debounce";
+import Notiflix from "notiflix";
 import { fetchCountries } from "fetchCountries.js";
 
 const countryList = document.querySelector(".country-list");
