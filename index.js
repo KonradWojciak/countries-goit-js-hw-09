@@ -25,10 +25,9 @@ inputBox.addEventListener(
       li.textContent = country.name.common;
       countryList.appendChild(li);
 
-      li.addEventListener("click", () => {
-        // display country info
-        const info = document.createElement("div");
-        info.innerHTML = `
+      const info = document.createElement("div");
+
+      info.innerHTML = `
       <h2>${country.name.common}</h2>
       <img src="${country.flags.svg}" alt="${country.name.common} flag">
       <ul>
@@ -36,9 +35,9 @@ inputBox.addEventListener(
         <li>Population: ${country.population}</li>
         <li>Languages: ${Object.values(country.languages).join(", ")}</li>
       </ul>`;
-        countryInfo.innerHTML = "";
-        countryInfo.appendChild(info);
-      });
+      countryInfo.innerHTML = "";
+      countryInfo.appendChild(info);
     });
-  }, DEBOUNCE_DELAY)
+  }),
+  DEBOUNCE_DELAY
 );
