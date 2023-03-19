@@ -1,6 +1,5 @@
-eksport;
-
 async function fetchCountries(name) {
+  const inputBox = document.querySelector("input");
   const inputValue = inputBox.value.trim();
   let name = inputValue;
   const url = `https://restcountries.com/v3.1/all`;
@@ -20,3 +19,5 @@ async function fetchCountries(name) {
 
   return Countries.catch((error) => console.log(error));
 }
+
+export { fetchCountries };
